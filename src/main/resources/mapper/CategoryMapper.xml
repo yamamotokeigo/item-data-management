@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.CategoryMapper">
+	<resultMap id="originalMap"
+		type="com.example.domain.Category">
+		<result column="parent_id" jdbcType="INTEGER" property="parentId" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="name_all" jdbcType="VARCHAR" property="nameAll" />
+
+		
+	</resultMap>
+	<insert id="insert">
+		INSERT INTO category (parent_id , name , name_all)
+		VALUES <foreach item="item" collection="list" separator=",">
+		(
+		{#item.parentId} , {#item.categoryName} , {#item.nameAll}
+		)
+		</foreach>	 
+	</insert>
+</mapper>

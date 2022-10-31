@@ -1,0 +1,11 @@
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/MillionData
+    username: postgres
+    password: postgres
+    
+mybatis:
+  type-aliases-package: com.example.domain.ItemData
+

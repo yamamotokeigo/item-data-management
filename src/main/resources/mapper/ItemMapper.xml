@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.ItemMapper">
+	<resultMap id="originalMap"
+		type="com.example.domain.Items">
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="condition" jdbcType="INTEGER" property="condition" />
+		<result column="category" jdbcType="INTEGER" property="category" />
+		<result column="brand" jdbcType="VARCHAR" property="brand" />
+		<result column="price" jdbcType="INTEGER" property="price" />
+		<result column="shipping" jdbcType="INTEGER" property="shipping" />
+		<result column="description" jdbcType="INTEGER" property="description" />
+
+		
+	</resultMap>
+	<insert id="insertItem">
+		INSERT INTO items(name , condition , category , brand , price , shipping , description)
+		VALUES 
+		(
+		{#item.name} , {#item.condition} , {#item.category} , {#item.brand} , {#item.price} , {item.shipping} , {item.description}
+		)
+	</insert>
+</mapper>
