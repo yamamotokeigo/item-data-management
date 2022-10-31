@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.OriginalMapper">
+	<resultMap id="originalMap"
+		type="com.example.domain.Original">
+		<result column="train_id" jdbcType="INTEGER" property="trainId" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="item_condition_id" jdbcType="INTEGER" property="itemConditionId" />
+		<result column="category_name" jdbcType="VARCHAR" property="categoryName" />
+		<result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+		<result column="price" jdbcType="INTEGER" property="price" />
+		<result column="shipping" jdbcType="INTEGER" property="shipping" />
+		<result column="item_description" jdbcType="INTEGER" property="itemDescription" />
+		
+	</resultMap>
+	<select id="findAll">
+		SELECT 
+			train_id
+			,name
+			,item_condition_id
+			,category_name
+			,brand_name
+			,price
+			,shipping
+			,item_description
+		FROM
+			original	 
+	</select>
+	
+</mapper>
